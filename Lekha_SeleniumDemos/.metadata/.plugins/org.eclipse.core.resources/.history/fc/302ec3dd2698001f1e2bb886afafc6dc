@@ -1,0 +1,48 @@
+package com.DailyAssignments;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
+public class A24testLoginOfHRM {
+	WebDriver driver;
+
+  @Test
+  public void user1() {
+	  driver.findElement(By.className("username")).sendKeys("Admin");
+	  driver.findElement(By.className("password")).sendKeys("admin123");
+	  driver.findElement(By.xpath("driver.findElement(By.className(\"password\")).sendKeys(\"admin123\");")).click();
+	  driver.switchTo().alert().accept();
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+	  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+  @BeforeTest
+  
+	  public void LaunchBrowser() {
+		  driver= new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			
+  }
+
+  @AfterTest
+  public void closeBrowser() {
+	  driver.close();
+  }
+
+}
