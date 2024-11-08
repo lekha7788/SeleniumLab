@@ -1,0 +1,42 @@
+package com.TricentisVehicleProject;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class D01Automobile_Silver {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://sampleapp.tricentis.com/101/index.php");
+		//AutoMobile Vehicle data
+		driver.findElement(By.partialLinkText("Auto")).click();
+		WebElement make= driver.findElement(By.id("make"));
+		Select vehicle= new Select(make) ;
+		vehicle.selectByVisibleText("Audi");
+		driver.findElement(By.id("engineperformance")).sendKeys("1000");
+		driver.findElement(By.id("dateofmanufacture")).sendKeys("12/1/2023");
+		driver.findElement(By.id("numberofseats")).sendKeys("2");
+		driver.findElement(By.id("fuel")).sendKeys("Petrol");
+		driver.findElement(By.id("listprice")).sendKeys("3000000");
+		driver.findElement(By.id("licenseplatenumber")).sendKeys("12343");
+		driver.findElement(By.id("annualmileage")).sendKeys("1000");
+		driver.findElement(By.id("nextenterinsurantdata")).click();
+		// Insurance Data Details
+		driver.findElement(By.id("firstname")).sendKeys("Lekha");
+		driver.findElement(By.id("lastname")).sendKeys("Aravinda");
+		driver.findElement(By.id("birthdate")).sendKeys("14/7/1993");
+		driver.findElement(By.cssSelector("#genderfemale)")).click();
+		
+		
+		
+	
+	}
+
+}

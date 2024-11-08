@@ -1,0 +1,8 @@
+package com.TricentisVehicleProject;
+
+public class Snippet {
+	public static void main(String[] args) {
+		/html/body/div[1]/div/div[1]/div/div/form/div/section[4]/section/div[1]/table/tbody/tr[1]/td[2]/span
+	}
+}
+

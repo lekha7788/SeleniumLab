@@ -1,0 +1,67 @@
+package com.TestNGDemos;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
+public class D05FlipkartAssignment {
+	WebDriver driver;
+
+	@Test
+	public void mobiles() {
+		driver.findElement(By.partialLinkText("Mobiles")).click();
+	}
+
+	@Test
+	public void Tvs() {
+		driver.findElement(By.partialLinkText("Tvs")).click();
+	}
+
+	@Test
+	public void Electronics() {
+		driver.findElement(By.partialLinkText("Elec")).click();
+
+	}
+
+	@Test
+	public void Fashion() {
+		driver.findElement(By.partialLinkText("Fashion")).click();
+	}
+
+	@Test
+	public void Beauty() {
+		driver.findElement(By.partialLinkText("Beauty")).click();
+	}
+
+	@BeforeMethod
+	public void OpenFlipkart() {
+		driver.get("https://www.flipkart.com/");
+		System.out.println("Title of Website is : " + driver.getTitle());
+	}
+
+	@AfterMethod
+	public void Items() {
+		System.out.println("Title of selected Item is : " + driver.getTitle());
+	}
+
+	@BeforeTest
+	public void LaunchBrowser() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+	}
+
+	@AfterTest
+	public void closeBrowser() {
+		driver.close();
+	}
+}
