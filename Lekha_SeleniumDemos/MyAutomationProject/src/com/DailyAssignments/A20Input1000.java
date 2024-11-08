@@ -15,7 +15,7 @@ public class A20Input1000 {
 		driver.get("https://www.fitpeo.com/revenue-calculator");
 		driver.findElement(By.xpath("//input[@id=':R57alklff9da:']")).sendKeys("1000");
 		Keystroke.
-
+		This is a new content
 	}
 
 }
